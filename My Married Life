@@ -1,0 +1,85 @@
+package marriedlife;
+ 
+import life.happiness.*;
+import shopping.weekend.*;
+import calls.bulk.sevenpm.*;
+ 
+/*
+ * DIFF STARTS HERE
+ */
+public class MarriedLife
+{
+    boolean stayAfter7pmInOffice = false;
+    //Too long to store., hence storing in long.
+    long totalExpensesOnSundays;
+ 
+    //The new non variable, variable to my life...
+    final static Controller controller = new Controller("Menaka Priya");
+ 
+    public static final boolean PERMISSION_DENIED = false;
+    public static final boolean PERMISSION_GRANTED = true;
+ 
+    public static void main(String[] args)
+    {
+ 
+        // This is how our life, changes after marriage...
+        for(DayInLife day : EachDay)
+        {           
+                if(DayInLife.isTripDay(day))
+                {
+                    goForATrip();
+                }
+                else
+                {
+                    controller.seekPermission();  
+                    day.work();
+                    controller.seekPermission(); 
+                    day.anyActivity();
+                    controller.seekPermission(); 
+                    day.sleep();
+                }
+        }
+        
+    }
+ 
+    //Method to get the venue details.... 
+    public void printVenueDetails() 
+    {
+        System.out.print("Time:  15th Feb, 2019 (5:00 AM - 6:00 AM)");
+        System.out.print("Venue: JPR Mahal Thiruma Mandabam");        
+        System.out.print("Reception: 14th Feb, 2019 (7:00 PM - 9:00 PM)");
+        System.out.print("Address: Salem - Ernakulam Hwy, Vaikundam");
+    }
+ 
+    //TODO: This is sample implementation.
+    // Need to add validations and checks in all functions 
+    // before 14th Feb.
+ 
+    public void goForATrip()
+    {
+ 
+        boolean result = controller.inform();
+        if(result == PERMISSION_DENIED))
+        {
+            return;
+        }
+        else
+        {
+            prepareForTrip();
+            bookTickets();
+            boolean canGoToTrip = controller.checkCommitmentsBeforeLeaving();
+            if(canGoToTrip == PERMISSION_GRANTED)
+            {
+                updateRegularlyInCalls();
+                enjoyVacationToAnExtent();
+            }
+            else
+            {
+                cancelTrip();
+            }
+        }
+    }
+ 
+ 
+ 
+}
