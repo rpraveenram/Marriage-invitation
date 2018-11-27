@@ -1,0 +1,86 @@
+package unmarriedlife;
+ 
+import life.happiness.*;
+import life.weekendtrip.*;
+import life.bachelor.fun.*;
+ 
+/*
+ * DIFF STARTS HERE
+ */
+public class UnMarriedLife
+{
+    boolean stayAfter7pmInOffice = true;    
+ 
+    int totalExpensesOnSundays;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    public static void main(String[] args)
+    {
+ 
+ 
+        for(DayInLife day : EachDay)
+        {
+            if(DayInLife.isTripDay(day))
+            {
+              goForATrip();
+            }
+            else
+            {
+ 
+              day.work();
+ 
+              day.anyActivity();
+ 
+              day.sleep();
+            }
+        }
+ 
+    }
+ 
+    public void printVenueDetails() throws NotImplementedException
+ 
+    {
+        throw NotImplementedException("Single Da!!");
+ 
+ 
+ 
+    }
+ 
+ 
+ 
+ 
+ 
+    public void goForATrip()
+    {
+ 
+        informHome();
+ 
+ 
+ 
+ 
+ 
+ 
+        prepareForTrip();
+        bookTickets();
+        enjoyVacation();
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    }
+ 
+ 
+ 
+}
+ 
